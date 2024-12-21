@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">E-Shop<span>Pro</span></div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="new-user">New User?</li>
+        <li><a href="#" class="btn-nav">Sign Up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="main-container">
+    <!-- Side Panel -->
+    
+      <aside class="side-panel">
+        <button class="toggle-btn" onclick="togglePanel()">&#9776;</button>
+        <h3>Categories</h3>
+        <ul class="category-list">
+          <li><a href="#">Trending Shirts</a></li>
+          <li><a href="#">Fashion</a></li>
+          <li><a href="#">Kids Counter</a></li>
+          <li><a href="#">Mens Wear Collection</a></li>
+          <li><a href="#">Formals</a></li>
+          <li><a href="#">Party Wear</a></li>
+        </ul>
+      </aside>
+      <script class="category-list">
+        function togglePanel() {
+          const sidePanel = document.querySelector('.side-panel');
+          sidePanel.classList.toggle('hidden');
+        }
+        </script>
+
+      
+
+    <!-- Content Area -->
+    <main class="content-area">
+      <h2>Welcome to Our Store!</h2>
+      <p>Select a category from the side panel to explore our products.</p>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 E-ShopPro. All rights reserved.</p>
+  </footer>
+  
+</body>
+</html>

@@ -1,0 +1,76 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Hub - Shop</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">Style Hub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product Listing Section -->
+  <main>
+    <section class="product-listing">
+      <h1>Our Products</h1>
+
+      <!-- Filter and Sort -->
+      <div class="filters">
+        <label for="category">Filter by Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="clothing">Clothing</option>
+          <option value="accessories">Accessories</option>
+          <option value="shoes">Shoes</option>
+        </select>
+
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+          <option value="popularity">Popularity</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="product-grid">
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1">
+          <h3>Product Name 1</h3>
+          <p>$29.99</p>
+          <a href="product-details.html" class="btn">View Details</a>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2">
+          <h3>Product Name 2</h3>
+          <p>$39.99</p>
+          <a href="product-details.html" class="btn">View Details</a>
+        </div>
+        <div class="product">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>Product Name 3</h3>
+          <p>$49.99</p>
+          <a href="product-details.html" class="btn">View Details</a>
+        </div>
+        <!-- Add more products as needed -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Style Hub. All rights reserved.</p>
+  </footer>
+</body>
+</html>

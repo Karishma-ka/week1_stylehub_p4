@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Hub - Contact</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Style Hub</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <form id="contact-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Style Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Handle form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log('Message sent!');
+      // You can send this data to a backend or display a confirmation.
+    });
+  </script>
+</body>
+</html>

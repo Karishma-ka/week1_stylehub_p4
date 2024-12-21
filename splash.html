@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Hub - Splash Screen</title>
+  <style>
+    /* Splash Screen Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling while the splash screen is showing */
+}
+
+/* Splash screen background */
+.splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fbcfe8; /* Baby Pink */
+  color: #333;
+  z-index: 1000; /* Ensure splash screen is above the main content */
+}
+
+/* Splash content */
+.splash-content h1 {
+  font-size: 3rem;
+  color: #5c67f2;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animation for the splash content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Main content styling */
+.main-content {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.main-content h2 {
+  font-size: 2rem;
+  color: #333;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div class="splash-screen">
+    <div class="splash-content">
+      <h1>Style Hub</h1>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content" style="display:none;">
+    <!-- Your Main Content Goes Here -->
+    <h2>Welcome to Style Hub!</h2>
+    <p>Explore our latest fashion collection.</p>
+  </div>
+
+  <!-- JavaScript for Splash Screen -->
+  <script>
+    // Wait for 3 seconds before showing the main content
+    setTimeout(function() {
+      document.querySelector('.splash-screen').style.display = 'none'; // Hide the splash screen
+      document.querySelector('.main-content').style.display = 'block'; // Show the main content
+    }, 3000); // 3 seconds
+  </script>
+</body>
+</html>

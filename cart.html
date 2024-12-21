@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Hub - Cart</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">Style Hub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <main>
+    <section class="cart">
+      <h1>Your Shopping Cart</h1>
+
+      <div class="cart-items">
+        <!-- Cart Item Example -->
+        <div class="cart-item" data-id="1">
+          <img src="product1.jpg" alt="Product Image">
+          <div class="cart-item-info">
+            <h3>Product Name 1</h3>
+            <p class="price">$29.99</p>
+            <div class="quantity">
+              <label for="quantity-1">Quantity:</label>
+              <input type="number" id="quantity-1" name="quantity" min="1" value="1">
+            </div>
+            <button class="remove-btn">Remove</button>
+          </div>
+        </div>
+        <!-- Repeat for other cart items -->
+      </div>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary">
+        <p><strong>Total: </strong>$29.99</p>
+        <a href="checkout.html" class="btn">Proceed to Checkout</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Style Hub. All rights reserved.</p>
+  </footer>
+
+  <script src="cart.js"></script>
+</body>
+</html>

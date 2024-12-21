@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style Hub - Order Confirmation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <div class="logo">Style Hub</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Order Confirmation Section -->
+  <main>
+    <section class="order-confirmation">
+      <h1>Order Confirmation</h1>
+      
+      <!-- Order Details -->
+      <div class="order-details">
+        <h2>Thank you for your order!</h2>
+        <p>Your order has been successfully placed. Below are your order details:</p>
+        
+        <div class="order-summary">
+          <p><strong>Order Number:</strong> <span class="order-number">#123456</span></p>
+          <p><strong>Order Date:</strong> <span class="order-date">2024-12-15</span></p>
+
+          <!-- List of ordered products -->
+          <div class="ordered-items">
+            <!-- Dynamically populated items -->
+          </div>
+
+          <!-- Order Total -->
+          <p><strong>Total: </strong><span class="order-total">$69.98</span></p>
+        </div>
+
+        <!-- Shipping and Payment Information -->
+        <div class="shipping-info">
+          <h3>Shipping Information:</h3>
+          <p><strong>Full Name:</strong> John Doe</p>
+          <p><strong>Address:</strong> 1234 Elm Street, Springfield, IL</p>
+          <p><strong>Country:</strong> USA</p>
+          
+          <h3>Payment Method:</h3>
+          <p><strong>Card Type:</strong> Visa</p>
+          <p><strong>Last 4 Digits:</strong> 1234</p>
+        </div>
+        
+        <!-- Next Steps -->
+        <div class="next-steps">
+          <a href="index.html" class="btn">Return to Home</a>
+          <a href="products.html" class="btn">Continue Shopping</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Style Hub. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline JavaScript -->
+  <script>
+    // Get the order number from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderNumber = urlParams.get('orderNumber');
+
+    // Fetch order details from the backend based on order number
+    fetch(`http://localhost:3000/api/orders/${orderNumber}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.orderNumber) {
+          // Fill order details dynamically
+          document.querySelector('.order-number').textContent = data.orderNumber;
+          document.querySelector('.order-date').textContent = data.orderDate;
+          document.querySelector('.order-total').textContent = `$${data.total}`;
+
+          const productsContainer = document.querySelector('.ordered-items');
+          data.products.forEach(product => {
+            const productDiv = document.createElement('div');
+            productDiv.classList.add('ordered-item');
+            productDiv.innerHTML = `
+              <p><strong>${product.name}</strong> - $${product.price}</p>
+              <p>Quantity: ${product.quantity}</p>
+            `;
+            productsContainer.appendChild(productDiv);
+          });
+        } else {
+          alert('Error retrieving order details.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error retrieving order details.');
+      });
+  </script>
+</body>
+</html>
